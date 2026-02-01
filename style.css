@@ -196,6 +196,7 @@
   border-radius: 8px;
   /* Smooth transition for hover effects */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative; /* Needed for overlay positioning */
   /* Border-top in Intel blue for visual interest */
   
 }
@@ -230,14 +231,46 @@
 
 /* Card description text */
 .timeline-card p {
-  /* Medium gray color */
   color: #666666;
-  /* Font size */
   font-size: 14px;
-  /* Line height for readability */
   line-height: 1.6;
-  /* Remove default margins */
   margin: 0;
+  display: none; /* Hide description by default */
+}
+
+/* Show the overlay when hovering the card */
+.timeline-card:hover p {
+  display: block; /* Show description on hover */
+}
+
+/* Hide the description by default and overlay it on the image */
+.timeline-card p {
+  display: none;
+  position: absolute;
+  top: 12px; /* aligns with image's margin-bottom */
+  left: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7); /* semi-transparent black */
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  z-index: 2;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0;
+  /* Only show over the image area */
+  max-width: calc(100% - 20px);
+}
+
+/* Make sure the image stays below the overlay */
+.timeline-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Timeline scroll hint text */
@@ -326,4 +359,23 @@
     padding-top: 18px;
     padding-bottom: 12px;
   }
+}
+
+.timeline-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f5f5f5;
+  padding: 12px 0 8px 0;
+  z-index: 100;
+  text-align: center;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
+}
+
+.timeline-scroll-hint {
+  text-align: center;
+  color: #999999;
+  margin: 0;
+  font-size: 14px;
 }
