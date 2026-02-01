@@ -155,18 +155,33 @@
 </html>
 
 <script>
-  // Beginner-friendly: Automatically scroll the timeline, pause on hover/touch
+  // Beginner-friendly: Automatically scroll the timeline, pause on hover/touch, reverse at ends
   document.addEventListener('DOMContentLoaded', function() {
     const timeline = document.getElementById('auto-scroll-timeline');
     let autoScroll = true;
     let scrollAmount = 0.5; // pixels per frame
+    let direction = 1; // 1 for right, -1 for left
+    let waiting = false;
 
     function scrollTimeline() {
-      if (autoScroll && timeline) {
-        timeline.scrollLeft += scrollAmount;
-        // Loop back to start if at the end
-        if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth) {
-          timeline.scrollLeft = 0;
+      if (autoScroll && timeline && !waiting) {
+        timeline.scrollLeft += scrollAmount * direction;
+
+        // If reached end, wait and reverse direction
+        if (direction === 1 && timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth - 1) {
+          waiting = true;
+          setTimeout(() => {
+            direction = -1;
+            waiting = false;
+          }, 2000); // wait 2 seconds at the end
+        }
+        // If reached start, wait and reverse direction
+        if (direction === -1 && timeline.scrollLeft <= 0) {
+          waiting = true;
+          setTimeout(() => {
+            direction = 1;
+            waiting = false;
+          }, 2000); // wait 2 seconds at the start
         }
       }
       requestAnimationFrame(scrollTimeline);
