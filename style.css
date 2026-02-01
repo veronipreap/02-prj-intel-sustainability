@@ -1,3 +1,130 @@
+/* Hero Section - Header */
+.hero {
+  /* Background image from img folder */
+  background-image: url('img/intel-header-logo.svg');
+  background-size: cover;
+  background-position: center;
+  /* Intel blue as fallback color */
+  background-color: #0071c5;
+  
+  /* Reduced height - 60vh instead of 100vh */
+  height: 60vh;
+  
+  /* Center content using Flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Add padding */
+  padding: 20px;
+  
+  /* Add overlay for text readability */
+  position: relative;
+}
+
+/* Overlay to darken background for better text contrast */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* Hero Content Wrapper */
+.hero-content {
+  /* Position content above overlay */
+  position: relative;
+  z-index: 2;
+  
+  /* Center text alignment */
+  text-align: center;
+  
+  /* Maximum width for readability */
+  max-width: 800px;
+}
+
+/* Hero Logo Styling */
+.hero-logo {
+  /* Set logo width */
+  width: 80px;
+  height: auto;
+  
+  /* Margin below logo */
+  margin-bottom: 20px;
+}
+
+/* Hero Headline Styling */
+.hero-headline {
+  /* Reduced font size - 42px instead of 56px */
+  font-size: 42px;
+  
+  /* White text for contrast */
+  color: #ffffff;
+  
+  /* Bold text */
+  font-weight: bold;
+  
+  /* Margin for spacing */
+  margin: 15px 0;
+  
+  /* Line height for readability */
+  line-height: 1.2;
+}
+
+/* Hero Subheading Styling */
+.hero-subheading {
+  /* Reduced font size - 16px instead of 20px */
+  font-size: 16px;
+  
+  /* Light gray-white color */
+  color: #e0e0e0;
+  
+  /* Margin for spacing */
+  margin: 15px 0 30px 0;
+  
+  /* Line height for readability */
+  line-height: 1.6;
+}
+
+/* Call-to-Action Button */
+.hero-button {
+  /* White background */
+  background-color: #ffffff;
+  
+  /* Intel blue text */
+  color: #0071c5;
+  
+  /* Padding for size */
+  padding: 12px 30px;
+  
+  /* Font size */
+  font-size: 16px;
+  
+  /* Bold text */
+  font-weight: bold;
+  
+  /* Remove default border */
+  border: none;
+  
+  /* Rounded corners */
+  border-radius: 5px;
+  
+  /* Cursor pointer */
+  cursor: pointer;
+  
+  /* Smooth transition for hover */
+  transition: background-color 0.3s ease;
+}
+
+/* Button hover effect */
+.hero-button:hover {
+  background-color: #f0f0f0;
+}
+
 /* Timeline Section - Main Container */
 .timeline-section {
   /* Padding for spacing around the section */
