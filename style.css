@@ -172,17 +172,20 @@
   /* Add padding for scrollbar */
   padding: 20px;
   /* Maximum width for the container */
-  max-width: 1200px;
+  max-width: 1025px; /* Show about 4 cards (4 x 220px + gaps) */
+  margin: 0 auto;   /* Center the timeline */
+  padding-right: 20px; /* Small right padding */
   /* Center the container */
   margin: 0 auto;
+  /* Optional: Add a little padding to the right so the last card isn't cut off */
+  padding-right: 40px; /* Add extra space on the right */
 }
 
 /* Timeline Card - Individual milestone */
 .timeline-card {
-  /* Fixed width so cards don't shrink */
-  flex: 0 0 280px;
+  flex: 0 0 220px;      /* Shrink card width from 280px to 220px */
   /* Padding inside the card */
-  padding: 20px;
+  padding: 14px;
   /* White background for the card */
   background-color: #ffffff;
   /* Add shadow for depth */
@@ -245,6 +248,13 @@
   margin-top: 30px;
   /* Font size */
   font-size: 14px;
+}
+
+/* This wrapper centers the timeline horizontally */
+.timeline-center-wrapper {
+  display: flex;              /* Use Flexbox for centering */
+  justify-content: center;    /* Center the timeline container */
+  width: 100%;                /* Take full width of the section */
 }
 
 /* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
