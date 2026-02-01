@@ -373,9 +373,9 @@
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
 }
 
-.timeline-scroll-hint {
-  text-align: center;
-  color: #999999;
-  margin: 0;
-  font-size: 14px;
+/* Hide the footer on small screens */
+@media (max-width: 767px) {
+  .timeline-footer {
+    display: none;
+  }
 }
