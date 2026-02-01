@@ -194,7 +194,7 @@
   /* Smooth transition for hover effects */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   /* Border-top in Intel blue for visual interest */
-  border-top: 4px solid #0071c5;
+  
 }
 
 /* Card hover effect */
