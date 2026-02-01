@@ -4,8 +4,8 @@
   background-image: url('img/intel-header-logo.svg');
   /* Display background at 50% size */
   background-size: 50%;
-  /* Center the background image */
-  background-position: center;
+  /* Move the background image up so the top is slightly cut off */
+  background-position: center 40px; /* Only this line should be present */
   /* Prevent background from repeating */
   background-repeat: no-repeat;
   /* Ensure background is fixed to viewport */
@@ -14,7 +14,7 @@
   background-color: #0071c5;
   
   /* Reduced height - 60vh instead of 100vh */
-  height: 60vh;
+  height: 45vh;
   
   /* Center content using Flexbox */
   display: flex;
@@ -183,9 +183,8 @@
 
 /* Timeline Card - Individual milestone */
 .timeline-card {
-  flex: 0 0 220px;      /* Shrink card width from 280px to 220px */
-  /* Padding inside the card */
-  padding: 14px;
+  flex: 0 0 230px;      /* Make each card a bit narrower (was 220px) */
+  padding: 10px;        /* Slightly reduce padding for a smaller look */
   /* White background for the card */
   background-color: #ffffff;
   /* Add shadow for depth */
