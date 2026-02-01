@@ -2,8 +2,10 @@
 .hero {
   /* Background image from img folder */
   background-image: url('img/intel-header-logo.svg');
+  /* Always center the background image horizontally and vertically */
+  background-position: center center;
   /* Display background at 50% size */
-  background-size: 50%;
+  background-size: 35%;
   /* Move the background image up so the top is slightly cut off */
   background-position: center 40px; /* Only this line should be present */
   /* Prevent background from repeating */
@@ -12,19 +14,21 @@
   background-attachment: fixed;
   /* Intel blue as fallback color */
   background-color: #0071c5;
-  
-  /* Reduced height - 60vh instead of 100vh */
-  height: 45vh;
-  
+
+  /* Make hero height adjust based on content, but not too small or too large */
+  min-height: 220px;      /* Minimum height for small screens */
+  height: auto;           /* Let the box grow with content */
+  padding: 40px 20px 20px 20px;
+
   /* Center content using Flexbox */
   display: flex;
   /* Align items to the top instead of center */
   align-items: flex-start;
   justify-content: center;
-  
+
   /* Add padding - increased top padding to push content down slightly */
   padding: 40px 20px 20px 20px;
-  
+
   /* Add overlay for text readability */
   position: relative;
 }
@@ -46,10 +50,10 @@
   /* Position content above overlay */
   position: relative;
   z-index: 2;
-  
+
   /* Center text alignment */
   text-align: center;
-  
+
   /* Maximum width for readability */
   max-width: 800px;
 }
@@ -58,23 +62,23 @@
 .hero-logo {
   /* Set a smaller, fixed width */
   width: 60px;
-  
+
   /* Make height automatic to maintain aspect ratio */
   height: auto;
-  
+
   /* Prevent the logo from exceeding its container */
   max-width: 100%;
-  
+
   /* Display as block element for better control */
   display: block;
-  
+
   /* Center the logo horizontally */
   margin-left: auto;
   margin-right: auto;
-  
+
   /* Space below the logo */
   margin-bottom: 20px;
-  
+
   /* Prevent stretching or distortion */
   object-fit: contain;
 }
@@ -83,16 +87,16 @@
 .hero-headline {
   /* Reduced font size - 42px instead of 56px */
   font-size: 42px;
-  
+
   /* White text for contrast */
   color: #ffffff;
-  
+
   /* Bold text */
   font-weight: bold;
-  
+
   /* Margin for spacing */
   margin: 15px 0;
-  
+
   /* Line height for readability */
   line-height: 1.2;
 }
@@ -101,13 +105,13 @@
 .hero-subheading {
   /* Reduced font size - 16px instead of 20px */
   font-size: 16px;
-  
+
   /* Light gray-white color */
   color: #e0e0e0;
-  
+
   /* Margin for spacing */
   margin: 15px 0 30px 0;
-  
+
   /* Line height for readability */
   line-height: 1.6;
 }
@@ -116,28 +120,28 @@
 .hero-button {
   /* White background */
   background-color: #ffffff;
-  
+
   /* Intel blue text */
   color: #0071c5;
-  
+
   /* Padding for size */
   padding: 12px 30px;
-  
+
   /* Font size */
   font-size: 16px;
-  
+
   /* Bold text */
   font-weight: bold;
-  
+
   /* Remove default border */
   border: none;
-  
+
   /* Rounded corners */
   border-radius: 5px;
-  
+
   /* Cursor pointer */
   cursor: pointer;
-  
+
   /* Smooth transition for hover */
   transition: background-color 0.3s ease;
 }
@@ -287,5 +291,40 @@
     width: 100%;
     /* Maximum width to prevent too-wide cards */
     max-width: 340px;
+  }
+}
+
+/* Make sure images in timeline cards are responsive */
+.timeline-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+/* Optional: Add a little margin to timeline cards on mobile for spacing */
+@media (max-width: 767px) {
+  .timeline-card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive: Adjust hero background size and spacing for smaller screens */
+@media (max-width: 900px) {
+  .hero {
+    background-size: 70%;      /* Make logo bigger on smaller screens */
+    min-height: 160px;         /* Reduce minimum height */
+    padding-top: 30px;         /* Less top padding */
+  }
+}
+
+/* Responsive: Adjust hero background size for smaller screens */
+@media (max-width: 600px) {
+  .hero {
+    background-size: 90%;      /* Make logo even bigger on very small screens */
+    min-height: 120px;
+    padding-top: 18px;
+    padding-bottom: 12px;
   }
 }
