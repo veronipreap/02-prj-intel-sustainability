@@ -235,22 +235,12 @@
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
-  display: none; /* Hide description by default */
-}
-
-/* Show the overlay when hovering the card */
-.timeline-card:hover p {
-  display: block; /* Show description on hover */
-}
-
-/* Hide the description by default and overlay it on the image */
-.timeline-card p {
   display: none;
   position: absolute;
-  top: 12px; /* aligns with image's margin-bottom */
+  top: 12px;
   left: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.7); /* semi-transparent black */
+  background: rgba(0,0,0,0.7);
   color: #fff;
   padding: 12px;
   border-radius: 8px;
@@ -258,19 +248,29 @@
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
-  /* Only show over the image area */
   max-width: calc(100% - 20px);
 }
 
-/* Make sure the image stays below the overlay */
-.timeline-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
+/* Show overlay description on hover for desktop */
+.timeline-card:hover p {
   display: block;
-  margin-bottom: 12px;
-  position: relative;
-  z-index: 1;
+}
+
+/* On small screens (vertical timeline), always show description below image, not as overlay */
+@media (max-width: 767px) {
+  .timeline-card p {
+    display: block;
+    position: static;
+    background: none;
+    color: #666666;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+    max-width: 100%;
+    margin-top: 0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
 }
 
 /* Timeline scroll hint text */
