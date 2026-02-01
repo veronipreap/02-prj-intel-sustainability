@@ -2,8 +2,14 @@
 .hero {
   /* Background image from img folder */
   background-image: url('img/intel-header-logo.svg');
-  background-size: cover;
+  /* Display background at 50% size */
+  background-size: 50%;
+  /* Center the background image */
   background-position: center;
+  /* Prevent background from repeating */
+  background-repeat: no-repeat;
+  /* Ensure background is fixed to viewport */
+  background-attachment: fixed;
   /* Intel blue as fallback color */
   background-color: #0071c5;
   
@@ -12,11 +18,12 @@
   
   /* Center content using Flexbox */
   display: flex;
-  align-items: center;
+  /* Align items to the top instead of center */
+  align-items: flex-start;
   justify-content: center;
   
-  /* Add padding */
-  padding: 20px;
+  /* Add padding - increased top padding to push content down slightly */
+  padding: 40px 20px 20px 20px;
   
   /* Add overlay for text readability */
   position: relative;
@@ -49,12 +56,27 @@
 
 /* Hero Logo Styling */
 .hero-logo {
-  /* Set logo width */
-  width: 80px;
+  /* Set a smaller, fixed width */
+  width: 60px;
+  
+  /* Make height automatic to maintain aspect ratio */
   height: auto;
   
-  /* Margin below logo */
+  /* Prevent the logo from exceeding its container */
+  max-width: 100%;
+  
+  /* Display as block element for better control */
+  display: block;
+  
+  /* Center the logo horizontally */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Space below the logo */
   margin-bottom: 20px;
+  
+  /* Prevent stretching or distortion */
+  object-fit: contain;
 }
 
 /* Hero Headline Styling */
