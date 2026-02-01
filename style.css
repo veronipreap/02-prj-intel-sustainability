@@ -379,3 +379,17 @@
     display: none;
   }
 }
+
+/* Make hero text bigger on small screens for readability */
+@media (max-width: 767px) {
+  .hero-headline {
+    font-size: 45px;
+  }
+  .hero-subheading {
+    font-size: 23px;
+  }
+  .hero-button {
+    font-size: 18px;
+    padding: 14px 32px;
+  }
+}
