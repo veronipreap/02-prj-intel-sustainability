@@ -1,1 +1,133 @@
-/* Add your CSS here */
+/* Timeline Section - Main Container */
+.timeline-section {
+  /* Padding for spacing around the section */
+  padding: 40px 20px;
+  /* Light background color for contrast */
+  background-color: #f5f5f5;
+}
+
+/* Timeline Container - Holds all cards */
+.timeline-container {
+  /* Use Flexbox to arrange cards */
+  display: flex;
+  /* Arrange cards in a row (horizontal) */
+  flex-direction: row;
+  /* Do NOT wrap cards - keep them in one row */
+  flex-wrap: nowrap;
+  /* Enable horizontal scrolling */
+  overflow-x: auto;
+  /* Space between cards */
+  gap: 20px;
+  /* Smooth scrolling behavior */
+  scroll-behavior: smooth;
+  /* Add padding for scrollbar */
+  padding: 20px;
+  /* Maximum width for the container */
+  max-width: 1200px;
+  /* Center the container */
+  margin: 0 auto;
+}
+
+/* Timeline Card - Individual milestone */
+.timeline-card {
+  /* Fixed width so cards don't shrink */
+  flex: 0 0 280px;
+  /* Padding inside the card */
+  padding: 20px;
+  /* White background for the card */
+  background-color: #ffffff;
+  /* Add shadow for depth */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Rounded corners */
+  border-radius: 8px;
+  /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* Border-top in Intel blue for visual interest */
+  border-top: 4px solid #0071c5;
+}
+
+/* Card hover effect */
+.timeline-card:hover {
+  /* Lift the card up slightly */
+  transform: translateY(-5px);
+  /* Increase shadow on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Year heading in the card */
+.timeline-card h2 {
+  /* Intel blue color */
+  color: #0071c5;
+  /* Font size for emphasis */
+  font-size: 28px;
+  /* Remove default margins */
+  margin: 0 0 10px 0;
+}
+
+/* Card title / milestone name */
+.timeline-card h3 {
+  /* Dark gray color */
+  color: #333333;
+  /* Font size */
+  font-size: 18px;
+  /* Margin for spacing */
+  margin: 0 0 15px 0;
+}
+
+/* Card description text */
+.timeline-card p {
+  /* Medium gray color */
+  color: #666666;
+  /* Font size */
+  font-size: 14px;
+  /* Line height for readability */
+  line-height: 1.6;
+  /* Remove default margins */
+  margin: 0;
+}
+
+/* Timeline scroll hint text */
+.timeline-scroll-hint {
+  /* Center the text */
+  text-align: center;
+  /* Gray color */
+  color: #999999;
+  /* Margin for spacing */
+  margin-top: 30px;
+  /* Font size */
+  font-size: 14px;
+}
+
+/* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
+@media (min-width: 768px) {
+  .timeline-container {
+    /* Enable horizontal scrolling */
+    overflow-x: auto;
+    /* Prevent wrapping on larger screens */
+    flex-wrap: nowrap;
+    /* Scroll behavior */
+    scroll-behavior: smooth;
+  }
+
+  /* Add padding for scrollbar on large screens */
+  .timeline-section {
+    padding: 40px 0;
+  }
+}
+
+/* RESPONSIVE DESIGN - For smaller screens (phones) */
+@media (max-width: 767px) {
+  .timeline-container {
+    /* Stack cards vertically on mobile */
+    flex-direction: column;
+    /* Center cards on mobile */
+    align-items: center;
+  }
+
+  .timeline-card {
+    /* Full width on mobile with margins */
+    width: 100%;
+    /* Maximum width to prevent too-wide cards */
+    max-width: 340px;
+  }
+}
