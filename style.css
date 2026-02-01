@@ -40,27 +40,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.544);
   z-index: 1;
 }
 
 /* Hero Content Wrapper */
 .hero-content {
-  /* Position content above overlay */
+  
   position: relative;
   z-index: 2;
 
-  /* Center text alignment */
   text-align: center;
 
-  /* Maximum width for readability */
-  max-width: 800px;
+  
+  max-width: 650px;
 }
 
 /* Hero Logo Styling */
 .hero-logo {
   /* Set a smaller, fixed width */
-  width: 60px;
+  width: 70px;
 
   /* Make height automatic to maintain aspect ratio */
   height: auto;
@@ -84,8 +83,8 @@
 
 /* Hero Headline Styling */
 .hero-headline {
-  /* Reduced font size - 42px instead of 56px */
-  font-size: 42px;
+  
+  font-size: 46px;
 
   /* White text for contrast */
   color: #ffffff;
@@ -103,7 +102,7 @@
 /* Hero Subheading Styling */
 .hero-subheading {
   /* Reduced font size - 16px instead of 20px */
-  font-size: 16px;
+  font-size: 20px;
 
   /* Light gray-white color */
   color: #e0e0e0;
@@ -127,7 +126,7 @@
   padding: 12px 30px;
 
   /* Font size */
-  font-size: 16px;
+  font-size: 19px;
 
   /* Bold text */
   font-weight: bold;
@@ -147,7 +146,7 @@
 
 /* Button hover effect */
 .hero-button:hover {
-  background-color: #f0f0f0;
+  background-color: #f4f7f8df;
 }
 
 /* Timeline Section - Main Container */
@@ -181,7 +180,7 @@
   /* Center the container */
   margin: 0 auto;
   /* Optional: Add a little padding to the right so the last card isn't cut off */
-  padding-right: 40px; /* Add extra space on the right */
+  padding-right: 30px; /* Add extra space on the right */
   scroll-snap-type: x mandatory;
 }
 

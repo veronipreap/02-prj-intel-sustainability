@@ -33,9 +33,8 @@
 
   <!-- Timeline Cards Section -->
   <section class="timeline-section">
-    <!-- Wrapper to help center the timeline -->
     <div class="timeline-center-wrapper">
-      <div class="timeline-container">
+      <div class="timeline-container" id="auto-scroll-timeline">
 
         <!-- Card 1: 1968 -->
         <div class="timeline-card">
@@ -154,3 +153,31 @@
   <p class="timeline-scroll-hint">Scroll to view timeline | Hover over cards to learn more!</p>
 </body>
 </html>
+
+<script>
+  // Beginner-friendly: Automatically scroll the timeline, pause on hover/touch
+  document.addEventListener('DOMContentLoaded', function() {
+    const timeline = document.getElementById('auto-scroll-timeline');
+    let autoScroll = true;
+    let scrollAmount = 0.5; // pixels per frame
+
+    function scrollTimeline() {
+      if (autoScroll && timeline) {
+        timeline.scrollLeft += scrollAmount;
+        // Loop back to start if at the end
+        if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth) {
+          timeline.scrollLeft = 0;
+        }
+      }
+      requestAnimationFrame(scrollTimeline);
+    }
+
+    // Pause auto-scroll on hover or touch
+    timeline.addEventListener('mouseenter', () => { autoScroll = false; });
+    timeline.addEventListener('mouseleave', () => { autoScroll = true; });
+    timeline.addEventListener('touchstart', () => { autoScroll = false; });
+    timeline.addEventListener('touchend', () => { autoScroll = true; });
+
+    scrollTimeline();
+  });
+</script>
