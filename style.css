@@ -1,32 +1,31 @@
 /* Hero Section - Header */
 .hero {
-  /* Background image from img folder */
+  
   background-image: url('img/intel-header-logo.svg');
-  /* Always center the background image horizontally and vertically */
+  
   background-position: center center;
-  /* Display background at 50% size */
+  
   background-size: 35%;
-  /* Move the background image up so the top is slightly cut off */
-  background-position: center 40px; /* Only this line should be present */
-  /* Prevent background from repeating */
+  
+  background-position: center 40px; 
+  
   background-repeat: no-repeat;
-  /* Ensure background is fixed to viewport */
+  
   background-attachment: fixed;
-  /* Intel blue as fallback color */
+ 
   background-color: #0071c5;
 
-  /* Make hero height adjust based on content, but not too small or too large */
-  min-height: 220px;      /* Minimum height for small screens */
-  height: auto;           /* Let the box grow with content */
+  min-height: 220px;      
+  height: auto;           
   padding: 40px 20px 20px 20px;
 
   /* Center content using Flexbox */
   display: flex;
-  /* Align items to the top instead of center */
+  
   align-items: flex-start;
   justify-content: center;
 
-  /* Add padding - increased top padding to push content down slightly */
+  
   padding: 40px 20px 20px 20px;
 
   /* Add overlay for text readability */
@@ -183,6 +182,7 @@
   margin: 0 auto;
   /* Optional: Add a little padding to the right so the last card isn't cut off */
   padding-right: 40px; /* Add extra space on the right */
+  scroll-snap-type: x mandatory;
 }
 
 /* Timeline Card - Individual milestone */
