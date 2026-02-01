@@ -157,39 +157,40 @@
 </html>
 
 <script>
-  // Beginner-friendly: Automatically scroll the timeline, pause on hover/touch, reverse at ends
+  // Only auto-scroll if timeline is horizontal (not column/flex-direction: column)
   document.addEventListener('DOMContentLoaded', function() {
     const timeline = document.getElementById('auto-scroll-timeline');
     let autoScroll = true;
-    let scrollAmount = 0.5; // pixels per frame
-    let direction = 1; // 1 for right, -1 for left
+    let scrollAmount = 0.5;
+    let direction = 1;
     let waiting = false;
 
-    function scrollTimeline() {
-      if (autoScroll && timeline && !waiting) {
-        timeline.scrollLeft += scrollAmount * direction;
+    function isHorizontal() {
+      // Checks if the timeline is in row direction (horizontal)
+      return window.getComputedStyle(timeline).flexDirection === 'row';
+    }
 
-        // If reached end, wait and reverse direction
+    function scrollTimeline() {
+      if (autoScroll && timeline && !waiting && isHorizontal()) {
+        timeline.scrollLeft += scrollAmount * direction;
         if (direction === 1 && timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth - 1) {
           waiting = true;
           setTimeout(() => {
             direction = -1;
             waiting = false;
-          }, 2000); // wait 2 seconds at the end
+          }, 2000);
         }
-        // If reached start, wait and reverse direction
         if (direction === -1 && timeline.scrollLeft <= 0) {
           waiting = true;
           setTimeout(() => {
             direction = 1;
             waiting = false;
-          }, 2000); // wait 2 seconds at the start
+          }, 2000);
         }
       }
       requestAnimationFrame(scrollTimeline);
     }
 
-    // Pause auto-scroll on hover or touch
     timeline.addEventListener('mouseenter', () => { autoScroll = false; });
     timeline.addEventListener('mouseleave', () => { autoScroll = true; });
     timeline.addEventListener('touchstart', () => { autoScroll = false; });
