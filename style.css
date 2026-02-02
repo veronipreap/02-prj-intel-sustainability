@@ -105,8 +105,11 @@
   /* Margin for spacing */
   margin: 15px 0;
 
-  /* Line height for readability */
-  line-height: 1.2;
+  /* Line height for readability - increased for better spacing */
+  line-height: 1.4;
+  
+  /* Add word spacing for better readability */
+  word-spacing: 0.05em;
 }
 
 /* Hero Subheading Styling */
@@ -123,8 +126,11 @@
   /* Margin for spacing */
   margin: 15px 0 30px 0;
 
-  /* Line height for readability */
-  line-height: 1.6;
+  /* Line height for readability - increased for better spacing */
+  line-height: 1.8;
+  
+  /* Add word spacing for better readability */
+  word-spacing: 0.05em;
 }
 
 /* Call-to-Action Button */
@@ -160,6 +166,22 @@
 /* Button hover effect */
 .hero-button:hover {
   background-color: #f4f7f8df;
+}
+
+/* NEW: Large screens (Asus Zenbook Fold and similar) - Make hero text bigger */
+@media (min-width: 1400px) {
+  .hero-headline {
+    font-size: 56px;           /* Bigger headline for large screens */
+  }
+  
+  .hero-subheading {
+    font-size: 24px;           /* Bigger subheading for large screens */
+  }
+  
+  .hero-button {
+    font-size: 21px;           /* Bigger button text for large screens */
+    padding: 14px 36px;        /* Slightly bigger button padding */
+  }
 }
 
 /* Timeline Section - Main Container */
@@ -366,6 +388,22 @@
   }
 }
 
+/* NEW: iPad Mini and small tablets - Make hero text smaller */
+@media (min-width: 768px) and (max-width: 900px) {
+  .hero-headline {
+    font-size: 38px;           /* Smaller headline for iPad Mini */
+  }
+  
+  .hero-subheading {
+    font-size: 21px;           /* Smaller subheading for iPad Mini */
+  }
+  
+  .hero-button {
+    font-size: 23px;           /* Smaller button text for iPad Mini */
+    padding: 11px 28px;        /* Slightly smaller button padding */
+  }
+}
+
 /* Responsive: Adjust hero background size for smaller screens */
 @media (max-width: 600px) {
   .hero {
@@ -382,7 +420,7 @@
   right: 0;
   bottom: 0;
   background: #f5f5f5;
-  padding: 0px 0 0px 0;  /* Make footer smaller (was 12px 0 8px 0) */
+  padding: 0px 0 0px 0;  
   z-index: 100;
   text-align: center;
   box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
@@ -409,17 +447,19 @@
   }
   
   .hero-headline {
-    font-size: 45px;
+    font-size: 52px;      /* Increased from 45px - bigger for phones */
     text-align: center;   /* Make sure text is centered */
     word-wrap: break-word; /* Break long words if needed */
+    line-height: 1.3;     /* Adjust line height for mobile */
   }
   .hero-subheading {
-    font-size: 23px;
+    font-size: 26px;      /* Increased from 23px - bigger for phones */
     text-align: center;   /* Make sure text is centered */
     word-wrap: break-word; /* Break long words if needed */
+    line-height: 1.6;     /* Adjust line height for mobile */
   }
   .hero-button {
-    font-size: 18px;
+    font-size: 20px;      /* Increased from 18px - bigger button text */
     padding: 14px 32px;
   }
 }
