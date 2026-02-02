@@ -165,7 +165,7 @@
 /* Timeline Section - Main Container */
 .timeline-section {
   /* Padding for spacing around the section */
-  padding: 40px 20px;
+  padding: 0px 0px;
   /* Light background color for contrast */
   background-color: #f5f5f5;
 }
@@ -174,10 +174,7 @@
 .timeline-container {
   /* Use Flexbox to arrange cards */
   display: flex;
-    overflow-x: scroll;
-  /* Force scrollbar to always show (Firefox) */
-  scrollbar-width: thin;
-  /* Arrange cards in a row (horizontal) */
+
   flex-direction: row;
   /* Do NOT wrap cards - keep them in one row */
   flex-wrap: nowrap;
@@ -188,10 +185,10 @@
   /* Smooth scrolling behavior */
   scroll-behavior: smooth;
   /* Add padding for scrollbar */
-  padding: 20px;
-  padding-bottom: 55px;  /* Extra padding at bottom to ensure scrollbar shows */
+  padding: 10px;
+  padding-bottom: 0px;  /* Extra padding at bottom to ensure scrollbar shows */
   /* Maximum width for the container */
-  max-width: 1025px; /* Show about 4 cards (4 x 220px + gaps) */
+  max-width: 1025px; /* Make container wider (was 1025px) */
   margin: 0 auto;   /* Center the timeline */
   padding-right: 20px; /* Small right padding */
   padding-right: 30px; /* Add extra space on the right */
