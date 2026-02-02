@@ -210,7 +210,7 @@
   padding: 10px;
   padding-bottom: 0px;  /* Extra padding at bottom to ensure scrollbar shows */
   /* Maximum width for the container */
-  max-width: 1115px; /* Make container wider (was 1025px) */
+  max-width: 1135px; /* Make container wider (was 1025px) */
   margin: 0 auto;   /* Center the timeline */
   padding-right: 20px; /* Small right padding */
   padding-right: 10px; /* Add extra space on the right */
