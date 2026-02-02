@@ -242,11 +242,46 @@
 
 /* Tablets - Make timeline vertical */
 @media (min-width: 768px) and (max-width: 920px) {
+  .timeline-card {
+    /* Make each card taller on iPad Air */
+    min-height: 360px;
+  }
+
+  .timeline-card img {
+    /* Make the image taller to fill more space */
+    height: 170px;
+  }
+
   .timeline-container {
     flex-direction: column;
     align-items: center;
-    max-width: 600px;
+    max-width: 720px;
     overflow-x: hidden;
+
+    /* Make the timeline fill the view and scroll vertically */
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+
+    /* Enable vertical snap like mobile */
+    scroll-snap-type: y mandatory;
+  }
+
+  .timeline-card {
+    /* Make each card a snap point */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
+
+  .timeline-card p {
+    /* Always show the description on iPad Air */
+    display: block;
+    position: static;
+    background: none;
+    color: #666666;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+    margin-top: 0;
   }
 }
 
