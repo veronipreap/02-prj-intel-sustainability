@@ -289,28 +289,43 @@
     background-color: rgba(0, 0, 0, 0.65);
   }
   
+  /* Make hero section shorter on mobile to save space for timeline */
+  .hero {
+    min-height: 80px; /* Reduced from 120px */
+    padding-top: 15px; /* Reduced from 28px */
+    padding-bottom: 8px; /* Reduced from 12px */
+  }
+  
   .hero-content {
     padding-left: 15px;
     padding-right: 15px;
   }
   
+  /* Make logo smaller on mobile */
+  .hero-logo {
+    width: 50px; /* Reduced from 75px */
+    margin-bottom: 10px; /* Reduced from 20px */
+  }
+  
   .hero-headline {
-    font-size: 52px;
+    font-size: 32px; /* Reduced from 52px */
     text-align: center;
     word-wrap: break-word;
-    line-height: 1.3;
+    line-height: 1.2; /* Tighter line height */
+    margin: 8px 0; /* Reduced spacing */
   }
   
   .hero-subheading {
-    font-size: 26px;
+    font-size: 16px; /* Reduced from 26px */
     text-align: center;
     word-wrap: break-word;
-    line-height: 1.6;
+    line-height: 1.4; /* Tighter line height */
+    margin: 8px 0 15px 0; /* Reduced spacing */
   }
   
   .hero-button {
-    font-size: 20px;
-    padding: 14px 32px;
+    font-size: 14px; /* Reduced from 20px */
+    padding: 10px 20px; /* Reduced from 14px 32px */
   }
 
   .timeline-container {
