@@ -1,19 +1,26 @@
 /* Hero Section - Header */
 .hero {
   
-  background-image: url('img/intel-header-logo.svg');
+  /* Add gradient overlay first, then background image */
+  background-image: 
+    linear-gradient(to right, 
+      #030214 0%, 
+      transparent 15%, 
+      transparent 85%, 
+      #030214 100%),
+    url('img/hero.png');
   
   background-position: center center;
   
-  background-size: 35%;
+  background-size: 80%;
   
-  background-position: center 40px; 
+  background-position: center 0px; 
   
   background-repeat: no-repeat;
   
   background-attachment: fixed;
  
-  background-color: #0071c5;
+  background-color: #030214;
 
   min-height: 220px;      
   height: auto;           
@@ -26,7 +33,7 @@
   justify-content: center;
 
   
-  padding: 40px 20px 20px 20px;
+  
 
   /* Add overlay for text readability */
   position: relative;
@@ -40,7 +47,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.544);
+  background-color: rgba(0, 0, 0, 0.308);
   z-index: 1;
 }
 
@@ -161,25 +168,26 @@
 .timeline-container {
   /* Use Flexbox to arrange cards */
   display: flex;
+    overflow-x: scroll;
+  /* Force scrollbar to always show (Firefox) */
+  scrollbar-width: thin;
   /* Arrange cards in a row (horizontal) */
   flex-direction: row;
   /* Do NOT wrap cards - keep them in one row */
   flex-wrap: nowrap;
-  /* Enable horizontal scrolling */
-  overflow-x: auto;
+  /* Enable horizontal scrolling - ALWAYS show scrollbar */
+
   /* Space between cards */
   gap: 20px;
   /* Smooth scrolling behavior */
   scroll-behavior: smooth;
   /* Add padding for scrollbar */
   padding: 20px;
+  padding-bottom: 55px;  /* Extra padding at bottom to ensure scrollbar shows */
   /* Maximum width for the container */
   max-width: 1025px; /* Show about 4 cards (4 x 220px + gaps) */
   margin: 0 auto;   /* Center the timeline */
   padding-right: 20px; /* Small right padding */
-  /* Center the container */
-  margin: 0 auto;
-  /* Optional: Add a little padding to the right so the last card isn't cut off */
   padding-right: 30px; /* Add extra space on the right */
   scroll-snap-type: x mandatory;
 }
@@ -295,8 +303,8 @@
 /* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
 @media (min-width: 768px) {
   .timeline-container {
-    /* Enable horizontal scrolling */
-    overflow-x: auto;
+    /* Keep horizontal scrolling visible */
+    overflow-x: scroll;
     /* Prevent wrapping on larger screens */
     flex-wrap: nowrap;
     /* Scroll behavior */
@@ -316,6 +324,8 @@
     flex-direction: column;
     /* Center cards on mobile */
     align-items: center;
+    /* Hide scrollbar on mobile since cards stack vertically */
+    overflow-x: hidden;
   }
 
   .timeline-card {
@@ -329,7 +339,8 @@
 /* Make sure images in timeline cards are responsive */
 .timeline-card img {
   width: 100%;
-  height: auto;
+  height: 100px;           /* Set a fixed height for all images */
+  object-fit: cover;       /* Crop images to fill the space nicely */
   border-radius: 8px;
   display: block;
   margin-bottom: 12px;
@@ -392,4 +403,24 @@
     font-size: 18px;
     padding: 14px 32px;
   }
+}
+
+/* Force scrollbar to always be visible (Chrome, Safari, Edge) */
+.timeline-container::-webkit-scrollbar {
+  height: 12px;              /* Height of horizontal scrollbar */
+  -webkit-appearance: none;  /* Remove default styling */
+}
+
+.timeline-container::-webkit-scrollbar-track {
+  background: #e0e0e0;       /* Light gray track */
+  border-radius: 10px;       /* Rounded track */
+}
+
+.timeline-container::-webkit-scrollbar-thumb {
+  background: #0071c5;       /* Intel blue scrollbar */
+  border-radius: 10px;       /* Rounded scrollbar */
+}
+
+.timeline-container::-webkit-scrollbar-thumb:hover {
+  background: #005a9e;       /* Darker blue on hover */
 }
