@@ -317,12 +317,19 @@
     flex-direction: column;
     align-items: center;
     overflow-x: hidden;
+    /* Add vertical scroll snap for mobile */
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    max-height: calc(100vh - 200px); /* Allow scrolling within viewport */
   }
 
   .timeline-card {
     width: 100%;
     max-width: 350px;
     margin-bottom: 20px;
+    /* Make each card a snap point */
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   /* On phones, always show description below image, not as overlay */
