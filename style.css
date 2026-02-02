@@ -22,9 +22,9 @@
  
   background-color: #030214;
 
-  min-height: 220px;      
+  min-height: 250px;      /* Reduced from 220px - smaller hero on desktop */
   height: auto;           
-  padding: 40px 20px 20px 20px;
+  padding: 20px 20px 15px 20px; /* Reduced padding - was 40px 20px 20px 20px */
 
   /* Center content using Flexbox */
   display: flex;
@@ -91,7 +91,7 @@
 /* Hero Headline Styling */
 .hero-headline {
   
-  font-size: 46px;
+  font-size: 50px;
 
   /* White text for contrast */
   color: #ffffff;
@@ -114,8 +114,8 @@
 
 /* Hero Subheading Styling */
 .hero-subheading {
-  /* Reduced font size - 16px instead of 20px */
-  font-size: 20px;
+  
+  font-size: 22px;
 
   /* Light gray-white color */
   color: #e0e0e0;
@@ -145,7 +145,7 @@
   padding: 12px 30px;
 
   /* Font size */
-  font-size: 19px;
+  font-size: 15px;
 
   /* Bold text */
   font-weight: bold;
@@ -169,9 +169,9 @@
 }
 
 /* NEW: Large screens (Asus Zenbook Fold and similar) - Make hero text bigger */
-@media (min-width: 1400px) {
+@media (max-width: 1400px) {
   .hero-headline {
-    font-size: 56px;           /* Bigger headline for large screens */
+    font-size: 50px;           /* Bigger headline for large screens */
   }
   
   .hero-subheading {
