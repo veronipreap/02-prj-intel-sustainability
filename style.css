@@ -404,11 +404,21 @@
     background-color: rgba(0, 0, 0, 0.65); /* Darker overlay on mobile (was 0.308) */
   }
   
+  /* Add horizontal padding to hero content on mobile */
+  .hero-content {
+    padding-left: 15px;   /* Add space on left side */
+    padding-right: 15px;  /* Add space on right side */
+  }
+  
   .hero-headline {
     font-size: 45px;
+    text-align: center;   /* Make sure text is centered */
+    word-wrap: break-word; /* Break long words if needed */
   }
   .hero-subheading {
     font-size: 23px;
+    text-align: center;   /* Make sure text is centered */
+    word-wrap: break-word; /* Break long words if needed */
   }
   .hero-button {
     font-size: 18px;
