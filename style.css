@@ -213,7 +213,7 @@
   max-width: 1115px; /* Make container wider (was 1025px) */
   margin: 0 auto;   /* Center the timeline */
   padding-right: 20px; /* Small right padding */
-  padding-right: 30px; /* Add extra space on the right */
+  padding-right: 10px; /* Add extra space on the right */
   scroll-snap-type: x mandatory;
 }
 
@@ -339,6 +339,28 @@
   /* Add padding for scrollbar on large screens */
   .timeline-section {
     padding: 40px 0;
+  }
+}
+
+/* NEW: Galaxy Z Fold 5 and similar foldable devices - Center timeline better */
+@media (min-width: 768px) and (max-width: 920px) {
+  .timeline-container {
+    /* Keep flexbox for proper centering */
+    display: flex;
+    /* Make timeline vertical instead of horizontal */
+    flex-direction: column;
+    /* Center cards horizontally */
+    align-items: center;
+    /* Center the container itself using margin */
+    margin-left: auto;
+    margin-right: auto;
+    /* Make it narrower so cards look good */
+    max-width: 600px;
+    /* Remove horizontal padding since we're centering */
+    padding-left: 0px;
+    padding-right: 0px;
+    /* Hide horizontal scrollbar since timeline is now vertical */
+    overflow-x: hidden;
   }
 }
 
