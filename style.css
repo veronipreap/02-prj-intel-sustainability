@@ -1,6 +1,5 @@
 /* Hero Section - Header */
 .hero {
-  
   /* Add gradient overlay first, then background image */
   background-image: 
     linear-gradient(to right, 
@@ -10,30 +9,20 @@
       #030214 100%),
     url('img/hero.png');
   
-  background-position: center center;
-  
-  background-size: 80%;
-  
   background-position: center 0px; 
-  
+  background-size: 80%;
   background-repeat: no-repeat;
-  
   background-attachment: fixed;
- 
   background-color: #030214;
 
-  min-height: 250px;      /* Reduced from 220px - smaller hero on desktop */
-  height: auto;           
-  padding: 20px 20px 15px 20px; /* Reduced padding - was 40px 20px 20px 20px */
+  min-height: 250px;
+  height: auto;
+  padding: 20px 20px 15px 20px;
 
   /* Center content using Flexbox */
   display: flex;
-  
   align-items: flex-start;
   justify-content: center;
-
-  
-  
 
   /* Add overlay for text readability */
   position: relative;
@@ -53,113 +42,53 @@
 
 /* Hero Content Wrapper */
 .hero-content {
-  
   position: relative;
   z-index: 2;
-
   text-align: center;
-
-  
-  max-width: 800px;  /* Make container wider (was 650px) */
+  max-width: 800px;
 }
 
 /* Hero Logo Styling */
 .hero-logo {
-  /* Set a smaller, fixed width */
   width: 75px;
-
-  /* Make height automatic to maintain aspect ratio */
   height: auto;
-
-  /* Prevent the logo from exceeding its container */
   max-width: 100%;
-
-  /* Display as block element for better control */
   display: block;
-
-  /* Center the logo horizontally */
-  margin-left: auto;
-  margin-right: auto;
-
-  /* Space below the logo */
-  margin-bottom: 20px;
-
-  /* Prevent stretching or distortion */
+  margin: 0 auto 20px auto;
   object-fit: contain;
 }
 
 /* Hero Headline Styling */
 .hero-headline {
-  
   font-size: 50px;
-
-  /* White text for contrast */
   color: #ffffff;
-
-  /* Bold text */
   font-weight: bold;
-  
-  /* Add a clean, readable font */
   font-family: 'Arial', 'Helvetica', sans-serif;
-
-  /* Margin for spacing */
   margin: 15px 0;
-
-  /* Line height for readability - increased for better spacing */
   line-height: 1.4;
-  
-  /* Add word spacing for better readability */
   word-spacing: 0.05em;
 }
 
 /* Hero Subheading Styling */
 .hero-subheading {
-  
   font-size: 22px;
-
-  /* Light gray-white color */
   color: #e0e0e0;
-  
-  /* Add the same font for consistency */
   font-family: 'Arial', 'Helvetica', sans-serif;
-
-  /* Margin for spacing */
   margin: 15px 0 30px 0;
-
-  /* Line height for readability - increased for better spacing */
   line-height: 1.8;
-  
-  /* Add word spacing for better readability */
   word-spacing: 0.05em;
 }
 
 /* Call-to-Action Button */
 .hero-button {
-  /* White background */
   background-color: #ffffff;
-
-  /* Intel blue text */
   color: #0071c5;
-
-  /* Padding for size */
   padding: 12px 30px;
-
-  /* Font size */
   font-size: 15px;
-
-  /* Bold text */
   font-weight: bold;
-
-  /* Remove default border */
   border: none;
-
-  /* Rounded corners */
   border-radius: 5px;
-
-  /* Cursor pointer */
   cursor: pointer;
-
-  /* Smooth transition for hover */
   transition: background-color 0.3s ease;
 }
 
@@ -168,112 +97,64 @@
   background-color: #f4f7f8df;
 }
 
-/* NEW: Large screens (Asus Zenbook Fold and similar) - Make hero text bigger */
-@media (max-width: 1400px) {
-  .hero-headline {
-    font-size: 50px;           /* Bigger headline for large screens */
-  }
-  
-  .hero-subheading {
-    font-size: 24px;           /* Bigger subheading for large screens */
-  }
-  
-  .hero-button {
-    font-size: 21px;           /* Bigger button text for large screens */
-    padding: 14px 36px;        /* Slightly bigger button padding */
-  }
-}
-
 /* Timeline Section - Main Container */
 .timeline-section {
-  /* Padding for spacing around the section */
   padding: 0px 0px;
-  /* Light background color for contrast */
   background-color: #f5f5f5;
 }
 
 /* Timeline Container - Holds all cards */
 .timeline-container {
-  /* Use Flexbox to arrange cards */
   display: flex;
-
   flex-direction: row;
-  /* Do NOT wrap cards - keep them in one row */
   flex-wrap: nowrap;
-  /* Enable horizontal scrolling - ALWAYS show scrollbar */
-
-  /* Space between cards */
   gap: 20px;
-  /* Smooth scrolling behavior */
   scroll-behavior: smooth;
-  /* Add padding for scrollbar */
-  padding: 10px;
-  padding-bottom: 0px;  /* Extra padding at bottom to ensure scrollbar shows */
-  /* Maximum width for the container */
-  max-width: 1135px; /* Make container wider (was 1025px) */
-  margin: 0 auto;   /* Center the timeline */
-  padding-right: 20px; /* Small right padding */
-  padding-right: 10px; /* Add extra space on the right */
+  padding: 10px 10px 0px 10px;
+  max-width: 1135px;
+  margin: 0 auto;
   scroll-snap-type: x mandatory;
 }
 
 /* Timeline Card - Individual milestone */
 .timeline-card {
-  flex: 0 0 250px;      /* Make each card a bit narrower (was 220px) */
-  padding: 10px;        /* Slightly reduce padding for a smaller look */
-  /* White background for the card */
+  flex: 0 0 250px;
+  padding: 10px;
   background-color: #ffffff;
-  /* Add shadow for depth */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Rounded corners */
   border-radius: 8px;
-  /* Smooth transition for hover effects */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative; /* Needed for overlay positioning */
-  /* Border-top in Intel blue for visual interest */
-  
+  position: relative;
 }
 
 /* Card hover effect */
 .timeline-card:hover {
-  /* Lift the card up slightly */
   transform: translateY(-5px);
-  /* Increase shadow on hover */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
 /* Year heading in the card */
 .timeline-card h2 {
-  /* Intel blue color */
   color: #0071c5;
-  /* Font size for emphasis */
   font-size: 28px;
-  /* Remove default margins */
   margin: 0 0 10px 0;
 }
 
 /* Card title / milestone name */
 .timeline-card h3 {
-  /* Dark gray color */
   color: #333333;
-  /* Font size */
   font-size: 18px;
-  /* Margin for spacing */
   margin: 0 0 15px 0;
 }
 
 /* Card description text */
 .timeline-card p {
-  color: #666666;
-  font-size: 14px;
-  line-height: 1.6;
-  margin: 0;
   display: none;
   position: absolute;
   top: 12px;
   left: 10px;
   right: 10px;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0, 0, 0, 0.7);
   color: #fff;
   padding: 12px;
   border-radius: 8px;
@@ -281,7 +162,6 @@
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
-  max-width: calc(100% - 20px);
 }
 
 /* Show overlay description on hover for desktop */
@@ -289,151 +169,30 @@
   display: block;
 }
 
-/* On small screens (vertical timeline), always show description below image, not as overlay */
-@media (max-width: 767px) {
-  .timeline-card p {
-    display: block;
-    position: static;
-    background: none;
-    color: #666666;
-    padding: 0;
-    border-radius: 0;
-    z-index: auto;
-    max-width: 100%;
-    margin-top: 0;
-    font-size: 14px;
-    line-height: 1.6;
-  }
-}
-
-/* Timeline scroll hint text */
-.timeline-scroll-hint {
-  /* Center the text */
-  text-align: center;
-  /* Gray color */
-  color: #999999;
-  /* Margin for spacing - reduced from 30px to 10px */
-  margin-top: 10px;
-  /* Font size */
-  font-size: 14px;
-}
-
-/* This wrapper centers the timeline horizontally */
-.timeline-center-wrapper {
-  display: flex;              /* Use Flexbox for centering */
-  justify-content: center;    /* Center the timeline container */
-  width: 100%;                /* Take full width of the section */
-}
-
-/* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
-@media (min-width: 768px) {
-  .timeline-container {
-    /* Keep horizontal scrolling visible */
-    overflow-x: scroll;
-    /* Prevent wrapping on larger screens */
-    flex-wrap: nowrap;
-    /* Scroll behavior */
-    scroll-behavior: smooth;
-  }
-
-  /* Add padding for scrollbar on large screens */
-  .timeline-section {
-    padding: 40px 0;
-  }
-}
-
-/* NEW: Galaxy Z Fold 5 and similar foldable devices - Center timeline better */
-@media (min-width: 768px) and (max-width: 920px) {
-  .timeline-container {
-    /* Keep flexbox for proper centering */
-    display: flex;
-    /* Make timeline vertical instead of horizontal */
-    flex-direction: column;
-    /* Center cards horizontally */
-    align-items: center;
-    /* Center the container itself using margin */
-    margin-left: auto;
-    margin-right: auto;
-    /* Make it narrower so cards look good */
-    max-width: 600px;
-    /* Remove horizontal padding since we're centering */
-    padding-left: 0px;
-    padding-right: 0px;
-    /* Hide horizontal scrollbar since timeline is now vertical */
-    overflow-x: hidden;
-  }
-}
-
-/* RESPONSIVE DESIGN - For smaller screens (phones) */
-@media (max-width: 767px) {
-  .timeline-container {
-    /* Stack cards vertically on mobile */
-    flex-direction: column;
-    /* Center cards on mobile */
-    align-items: center;
-    /* Hide scrollbar on mobile since cards stack vertically */
-    overflow-x: hidden;
-  }
-
-  .timeline-card {
-    /* Full width on mobile with margins */
-    width: 100%;
-    /* Maximum width to prevent too-wide cards */
-    max-width: 350px;
-  }
-}
-
 /* Make sure images in timeline cards are responsive */
 .timeline-card img {
   width: 100%;
-  height: 120px;           /* Set a fixed height for all images */
-  object-fit: cover;       /* Crop images to fill the space nicely */
-  object-position: top;    /* Align images from the top - prevents cutting off tops */
+  height: 120px;
+  object-fit: cover;
+  object-position: top;
   border-radius: 8px;
   display: block;
   margin-bottom: 12px;
 }
 
-/* Optional: Add a little margin to timeline cards on mobile for spacing */
-@media (max-width: 767px) {
-  .timeline-card {
-    margin-bottom: 20px;
-  }
+/* Timeline scroll hint text */
+.timeline-scroll-hint {
+  text-align: center;
+  color: #999999;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
-/* Responsive: Adjust hero background size and spacing for smaller screens */
-@media (max-width: 900px) {
-  .hero {
-    background-size: 160%;      /* Make background image bigger on tablets */
-    min-height: 160px;         /* Reduce minimum height */
-    padding-top: 60px;         /* Less top padding */
-  }
-}
-
-/* NEW: iPad Mini and small tablets - Make hero text smaller */
-@media (min-width: 768px) and (max-width: 900px) {
-  .hero-headline {
-    font-size: 38px;           /* Smaller headline for iPad Mini */
-  }
-  
-  .hero-subheading {
-    font-size: 21px;           /* Smaller subheading for iPad Mini */
-  }
-  
-  .hero-button {
-    font-size: 23px;           /* Smaller button text for iPad Mini */
-    padding: 11px 28px;        /* Slightly smaller button padding */
-  }
-}
-
-/* Responsive: Adjust hero background size for smaller screens */
-@media (max-width: 600px) {
-  .hero {
-    background-size: 200%;      /* Make background image much bigger on phones */
-    min-height: 120px;
-    padding-top: 28px;
-    padding-bottom: 12px;
-  }
+/* This wrapper centers the timeline horizontally */
+.timeline-center-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .timeline-footer {
@@ -442,66 +201,144 @@
   right: 0;
   bottom: 0;
   background: #f5f5f5;
-  padding: 0px 0 0px 0;  
+  padding: 0px 0 0px 0;
   z-index: 100;
   text-align: center;
-  box-shadow: 0 -2px 8px rgba(0,0,0,0.04);
-}
-
-/* Hide the footer on small screens */
-@media (max-width: 767px) {
-  .timeline-footer {
-    display: none;
-  }
-}
-
-/* Make hero text bigger on small screens for readability */
-@media (max-width: 767px) {
-  /* Darken the overlay more on mobile for better text readability */
-  .hero::before {
-    background-color: rgba(0, 0, 0, 0.65); /* Darker overlay on mobile (was 0.308) */
-  }
-  
-  /* Add horizontal padding to hero content on mobile */
-  .hero-content {
-    padding-left: 15px;   /* Add space on left side */
-    padding-right: 15px;  /* Add space on right side */
-  }
-  
-  .hero-headline {
-    font-size: 52px;      /* Increased from 45px - bigger for phones */
-    text-align: center;   /* Make sure text is centered */
-    word-wrap: break-word; /* Break long words if needed */
-    line-height: 1.3;     /* Adjust line height for mobile */
-  }
-  .hero-subheading {
-    font-size: 26px;      /* Increased from 23px - bigger for phones */
-    text-align: center;   /* Make sure text is centered */
-    word-wrap: break-word; /* Break long words if needed */
-    line-height: 1.6;     /* Adjust line height for mobile */
-  }
-  .hero-button {
-    font-size: 20px;      /* Increased from 18px - bigger button text */
-    padding: 14px 32px;
-  }
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.04);
 }
 
 /* Force scrollbar to always be visible (Chrome, Safari, Edge) */
 .timeline-container::-webkit-scrollbar {
-  height: 12px;              /* Height of horizontal scrollbar */
-  -webkit-appearance: none;  /* Remove default styling */
+  height: 12px;
+  -webkit-appearance: none;
 }
 
 .timeline-container::-webkit-scrollbar-track {
-  background: #e0e0e0;       /* Light gray track */
-  border-radius: 10px;       /* Rounded track */
+  background: #e0e0e0;
+  border-radius: 10px;
 }
 
 .timeline-container::-webkit-scrollbar-thumb {
-  background: #0071c5;       /* Intel blue scrollbar */
-  border-radius: 10px;       /* Rounded scrollbar */
+  background: #0071c5;
+  border-radius: 10px;
 }
 
 .timeline-container::-webkit-scrollbar-thumb:hover {
-  background: #005a9e;       /* Darker blue on hover */
+  background: #005a9e;
+}
+
+/* RESPONSIVE DESIGN - For larger screens (tablets and desktops) */
+@media (min-width: 768px) {
+  .timeline-container {
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+    scroll-behavior: smooth;
+  }
+
+  .timeline-section {
+    padding: 40px 0;
+  }
+}
+
+/* Tablets - Make timeline vertical */
+@media (min-width: 768px) and (max-width: 920px) {
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    overflow-x: hidden;
+  }
+}
+
+/* Responsive: Adjust hero background size and spacing for smaller screens */
+@media (max-width: 900px) {
+  .hero {
+    background-size: 160%;
+    min-height: 160px;
+    padding-top: 60px;
+  }
+  
+  .hero-headline {
+    font-size: 38px;
+  }
+  
+  .hero-subheading {
+    font-size: 21px;
+  }
+  
+  .hero-button {
+    font-size: 23px;
+    padding: 11px 28px;
+  }
+}
+
+/* Responsive: Adjust hero background size for phones */
+@media (max-width: 600px) {
+  .hero {
+    background-size: 200%;
+    min-height: 120px;
+    padding-top: 28px;
+    padding-bottom: 12px;
+  }
+}
+
+/* RESPONSIVE DESIGN - For phones */
+@media (max-width: 767px) {
+  /* Darken the overlay more on mobile for better text readability */
+  .hero::before {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  
+  .hero-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .hero-headline {
+    font-size: 52px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.3;
+  }
+  
+  .hero-subheading {
+    font-size: 26px;
+    text-align: center;
+    word-wrap: break-word;
+    line-height: 1.6;
+  }
+  
+  .hero-button {
+    font-size: 20px;
+    padding: 14px 32px;
+  }
+
+  .timeline-container {
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  .timeline-card {
+    width: 100%;
+    max-width: 350px;
+    margin-bottom: 20px;
+  }
+
+  /* On phones, always show description below image, not as overlay */
+  .timeline-card p {
+    display: block;
+    position: static;
+    background: none;
+    color: #666666;
+    padding: 0;
+    border-radius: 0;
+    z-index: auto;
+    margin-top: 0;
+  }
+
+  /* Hide the footer on small screens */
+  .timeline-footer {
+    display: none;
+  }
 }
